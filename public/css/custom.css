@@ -1,0 +1,16 @@
+#top-cta {
+    float: right;
+    margin-left: 12px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+    display:none;
+}
+
+#top-cta a{
+    padding: 10px;
+}
+
+.header-sticky #top-cta {
+    display:block;
+}

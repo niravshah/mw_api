@@ -1,0 +1,98 @@
+{% extends 'layout.html' %} {% block cta %}
+<!--HOME -->
+<div id="top-cta">
+    <a class="button color rounded effect icon-left" href="/"><span><i class="fa fa-home"></i>HOME</span></a>
+</div>
+{% endblock %} {% block content %} -->
+<!-- PAGE TITLE -->
+<section id="page-title" class="page-title-parallax page-title-center text-dark" style="background-image:url(images/parallax/page-title-parallax.jpg);">
+    <div class="container">
+        <div class="page-title col-md-8" data-animation="fadeInDown" data-animation-delay="300">
+            <h1>REQUEST INVITE</h1>
+            <span>We are currently accepting limited Beta applications.</span> 
+        </div>
+        <div class="breadcrumb col-md-4" data-animation="fadeInDown" data-animation-delay="800">
+            <ul>
+                <li><a href="/"><i class="fa fa-home"></i></a> 
+                </li>
+                <li class="active"><a href="#">Invite</a> 
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- END: PAGE TITLE -->
+
+<!-- CONTENT -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-uppercase">Tell us a little about Your Organization</h3>
+                <p>The information you enter here will be used by us to create your custom MoveWithin platform. All information your enter here is private and will never be shared with any external parties</p>
+                <div class="m-t-30">
+                    <form id="widget-contact-form" action="http://amazon-bicycle.codio.io:3000/contacts" role="form" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Organization Name</label>
+                                <input type="text" aria-required="true" name="orgName" class="form-control required name" placeholder="Enter your Organization Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Employees</label>
+                                <select name="noEmployees" class="form-control">
+                                    <option>0-200</option>
+                                    <option>200-500</option>
+                                    <option>500-1000</option>
+                                    <option>Greater than 1000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="name">Your Name</label>
+                                <input type="text" aria-required="true" name="contactName" class="form-control required name" placeholder="Enter your Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">Your Email</label>
+                                <input type="text" aria-required="true" name="contactEmail" class="form-control required email" placeholder="Enter your Email">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea type="text" name="message" rows="5" class="form-control required" placeholder="Any additional details questions you may have for us"></textarea>
+                        </div>
+                        <input type="text" class="hidden" id="widget-contact-form-antispam" name="widget-contact-form-antispam" value="" />
+                        <button class="btn btn-primary" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Request</button>
+                    </form>
+                    <script type="text/javascript">
+                        jQuery("#widget-contact-form").validate({
+                            submitHandler: function(form) {
+                                jQuery(form).ajaxSubmit({
+                                    success: function(text) {
+                                        if(text.response == 'success') {
+                                            $.notify({
+                                                message: "We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible."
+                                            }, {
+                                                type: 'success'
+                                            });
+                                            $(form)[0].reset();
+                                        } else {
+                                            $.notify({
+                                                message: text.message
+                                            }, {
+                                                type: 'danger'
+                                            });
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: CONTENT -->
+{% endblock %} {% block customScript %} {% endblock %}
+

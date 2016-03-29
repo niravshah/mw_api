@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>MoveWithin | Internal Mobility</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/animateit/animate.min.css" rel="stylesheet">
+
+    <!-- Vendor css -->
+    <link href="vendor/owlcarousel/owl.carousel.css" rel="stylesheet">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Template base -->
+    <link href="css/theme-base.css" rel="stylesheet">
+
+    <!-- Template elements -->
+    <link href="css/theme-elements.css" rel="stylesheet">
+
+    <!-- Responsive classes -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+
+    <!-- Template color -->
+    <link href="css/color-variations/orange.css" rel="stylesheet" type="text/css" media="screen">
+
+    <!-- LOAD GOOGLE FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600%7CRaleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+
+    <!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+    <link rel="stylesheet" property="stylesheet" href="vendor/rs-plugin/css/settings.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/rs-plugin-styles.css" type="text/css" />
+
+    <!-- CSS CUSTOM STYLE -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen" />
+
+    <!--VENDOR SCRIPT-->
+    <script src="vendor/jquery/jquery-1.11.2.min.js"></script>
+    <script src="vendor/plugins-compressed.js"></script>
+
+</head>
+
+<body class="wide">
+
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+        <!-- HEADER -->
+        <header id="header" class="header-fullwidth header-transparent">
+            <div id="header-wrap">
+                <div class="container">
+
+                    <!--LOGO-->
+                    <div id="logo">
+                        <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png">
+                            <img src="images/logo.png" alt="MoveWithin Logo">
+                        </a>
+                    </div>
+                    <!--END: LOGO-->
+
+                    <!--MOBILE MENU -->
+                    <div class="nav-main-menu-responsive">
+                        <button class="lines-button x" type="button" data-toggle="collapse" data-target=".main-menu-collapse">
+                            <span class="lines"></span>
+                        </button>
+                    </div>
+                    <!--END: MOBILE MENU -->
+
+                       {% block cta %}{% endblock %}
+
+
+                </div>
+            </div>
+        </header>
+        <!-- END: HEADER -->
+
+        
+        {% block content %}{% endblock %}
+        
+        
+        <!-- FOOTER -->
+        <footer class="background-dark text-grey" id="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-logo float-left">
+                                <img alt="" src="images/logo-sm-dark.png">
+                            </div>
+                            <p style="margin-top: 12px;">MoveWithin provides organizations a platform to develop a strong internal recruitment & talent management brand. Develop an open and accessible internal mobility program and boost talent retention and attraction by offering employees oppurtunities to diversify and grow their careers by applying for new roles within the organization.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="seperator seperator-dark seperator-simple"></div>
+                    <div class="row">
+
+
+                        <div class="col-md-4">
+                            <div class="widget clearfix widget-contact-us" style="background-image: url('images/world-map.png'); background-position: 50% 55px; background-repeat: no-repeat">
+                                <h4 class="widget-title">Contact us</h4>
+                                <ul class="list-large list-icons">
+                                    <li><i class="fa fa-map-marker"></i>
+                                        <strong>Address:</strong> 34 Charcot Road
+                                        <br>London, NW9 5US</li>
+                                    <li><i class="fa fa-phone"></i><strong>Phone:</strong> (44) 7596-162765</li>
+                                    <li><i class="fa fa-envelope"></i><strong>Email:</strong>  <a href="mailto:first.last@example.com">hello@movewithin.org</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="copyright-text col-md-6">&copy; 2016 MoveWithin - Internal Talent Management Solutions <a target="_blank" href="http://www.movewithin.org">MoveWithin</a>
+                        </div>
+                        <div class="col-md-6">                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END: FOOTER -->
+
+    </div>
+    <!-- END: WRAPPER -->
+
+    <!-- GO TOP BUTTON -->
+    <a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+    <script type="text/javascript" src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    {% block customScript %}{% endblock %}
+    
+    <!-- Theme Base, Components and Settings -->
+    <script src="js/theme-functions.js"></script>
+
+    <!-- Custom js file -->
+    <script src="js/custom.js"></script>
+
+
+
+</body>
+
+</html>
