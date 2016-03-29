@@ -6,12 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
 
+
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/mw_api');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var contactForm = require('./routes/users');
 
 var app = express();
 
@@ -19,6 +19,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', cons.swig);
 app.set('view engine', 'html');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -30,8 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-require('./routes/contact')(app);
+require('./routes/contacts')(app);
 require('./routes/users')(app);
+require('./routes/posts')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -70,3 +72,4 @@ app.listen(3000, function () {
 });
 
 //module.exports = app;
+

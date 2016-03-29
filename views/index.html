@@ -1,6 +1,4 @@
-{% extends 'layout.html' %} 
-
-{% block cta %}
+{% extends 'layout.html' %} {% block cta %}
 <div id="top-cta">
     <a class="button color rounded effect icon-left" href="/invite"><span><i class="fa fa-bolt"></i>REQUEST INVITE</span></a>
 </div>
@@ -134,7 +132,7 @@
         <div class="row text-center p-b-40">
             <h3>Key Features of MoveWithin</h3>
         </div>
-        
+
         <div class="row">
             <div class="col-md-4">
                 <div class="icon-box effect square medium color">
@@ -206,7 +204,74 @@
     </div>
 </section>
 <!-- CALL TO ACTION -->
-{% endblock %} {% block customScript %}
+
+{% if blogs.length > 1 %}
+
+<!-- BLOG -->
+<section class="content">
+    <div class="container">
+
+        <div class="heading heading text-left">
+            <h2>OUR BLOG</h2>
+            <span class="lead">Latest trends and thoughts on Talent Management, Retention & Attraction</span>
+        </div>
+    </div>
+
+    <div id="blog">
+        <div class="container">
+            <!-- Blog post-->
+            <div class="post-content  post-block post-modern post-3-columns post-light-background">
+                <!-- Blog image post-->
+
+                {% for blog in blogs %}
+
+                <div class="post-item" data-animation="fadeInUp" data-animation-delay="0">
+                    <div class="post-image">
+                        <a href="#">
+                            <img alt="" src="images/blog/thumb/4.jpg">
+                        </a>
+                    </div>
+                    <div class="post-content-details">
+                        <div class="post-title">
+                            <h3><a href="#">{{blog.title}}</a></h3>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-autor">Post by: <a href="#">Alea Grande</a></span>
+                            <span class="post-category">in <a href="#">Productivity</a></span>
+                        </div>
+                        <div class="post-description">
+                            <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Ut nec metus a mi ullamcorper hendrerit.</p>
+
+                            <div class="post-info">
+                                <a class="read-more" href="blog-post.html">read more <i class="fa fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span class="post-date-day">19</span>
+                            <span class="post-date-month">January</span>
+                            <span class="post-date-year">2015</span>
+                        </div>
+
+                        <div class="post-comments">
+                            <a href="#">
+                                <i class="fa fa-comments-o"></i>
+                                <span class="post-comments-number">324</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <!-- END: Blog post-->
+        </div>
+    </div>
+</section>
+<!-- END: BLOG -->
+{% endif %} {% endblock %} {% block customScript %}
 <script type="text/javascript">
     var tpj = jQuery;
     var revapi32;
