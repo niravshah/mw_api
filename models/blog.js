@@ -7,6 +7,7 @@ var blogPostSchema = new Schema({
     author: String,
     category: String,
     description: String,
+    imageUrl:String,
     comments:String,
     created_at: Date,
     updated_at: Date

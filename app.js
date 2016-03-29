@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
-
+var mongo_express = require('mongo-express/lib/middleware')
+var mongo_express_config = require('./config')
 
 
 var mongoose = require('mongoose');
@@ -14,6 +15,8 @@ mongoose.connect('mongodb://localhost/mw_api');
 var routes = require('./routes/index');
 
 var app = express();
+
+app.use('/mongo_express', mongo_express(mongo_express_config))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
