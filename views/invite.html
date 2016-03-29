@@ -31,11 +31,11 @@
                 <h3 class="text-uppercase">Tell us a little about Your Organization</h3>
                 <p>The information you enter here will be used by us to create your custom MoveWithin platform. All information your enter here is private and will never be shared with any external parties</p>
                 <div class="m-t-30">
-                    <form id="widget-contact-form" action="http://amazon-bicycle.codio.io:3000/contacts" role="form" method="post">
+                    <form id="widget-contact-form" action="/contacts/new" role="form" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">Organization Name</label>
-                                <input type="text" aria-required="true" name="orgName" class="form-control required name" placeholder="Enter your Organization Name">
+                                <input type="text" aria-required="true" name="orgName" class="form-control required name" placeholder="Enter your Organization Name" value="test org">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="name">Employees</label>
@@ -49,50 +49,51 @@
 
                             <div class="form-group col-md-6">
                                 <label for="name">Your Name</label>
-                                <input type="text" aria-required="true" name="contactName" class="form-control required name" placeholder="Enter your Name">
+                                <input type="text" aria-required="true" name="contactName" class="form-control required name" placeholder="Enter your Name" value="test  yser">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="name">Your Email</label>
-                                <input type="text" aria-required="true" name="contactEmail" class="form-control required email" placeholder="Enter your Email">
+                                <input type="text" aria-required="true" name="contactEmail" class="form-control required email" placeholder="Enter your Email" value="testemail@email.com">
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label for="message">Additional Details</label>
-                            <textarea type="text" name="message" rows="5" class="form-control required" placeholder="Any additional details questions you may have for us"></textarea>
+                            <textarea type="text" name="message" rows="5" class="form-control required" placeholder="Any additional details questions you may have for us" value="test message"></textarea>
                         </div>
                         <input type="text" class="hidden" id="widget-contact-form-antispam" name="widget-contact-form-antispam" value="" />
                         <button class="btn btn-primary" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send Request</button>
                     </form>
-                    <script type="text/javascript">
-                        jQuery("#widget-contact-form").validate({
-                            submitHandler: function(form) {
-                                jQuery(form).ajaxSubmit({
-                                    success: function(text) {
-                                        if(text.response == 'success') {
-                                            $.notify({
-                                                message: "We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible."
-                                            }, {
-                                                type: 'success'
-                                            });
-                                            $(form)[0].reset();
-                                        } else {
-                                            $.notify({
-                                                message: text.message
-                                            }, {
-                                                type: 'danger'
-                                            });
-                                        }
-                                    }
-                                });
-                            }
-                        });
-                    </script>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- END: CONTENT -->
-{% endblock %} {% block customScript %} {% endblock %}
+{% endblock %} {% block customScript %}
+<script type="text/javascript">
+    jQuery("#widget-contact-form").validate({
+        submitHandler: function(form) {
+            jQuery(form).ajaxSubmit({
+                success: function(text) {
+                    if(text.response == 'success') {
+                        $.notify({
+                            message: "We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible."
+                        }, {
+                            type: 'success'
+                        });
+                        $(form)[0].reset();
+                    } else {
+                        $.notify({
+                            message: text.message
+                        }, {
+                            type: 'danger'
+                        });
+                    }
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
 

@@ -29,8 +29,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/contacts', contactForm);
+
+require('./routes/contact')(app);
+require('./routes/users')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -64,4 +65,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+app.listen(3000, function () {
+  console.log('Started Node Server');
+});
+
+//module.exports = app;
