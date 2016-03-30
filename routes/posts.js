@@ -1,9 +1,7 @@
 var BlogPost = require('./../models/posts');
-var multer  = require('multer');
-var upload = multer();
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
 
-module.exports = function(app,pass) {
+module.exports = function(app) {
     app.get('/posts', function(req, res) {
         BlogPost.find({}, function(err, users) {
             if(err) throw err;
@@ -20,16 +18,12 @@ module.exports = function(app,pass) {
     
     
     
-    app.get('/editor', ensureLoggedIn, function(req, res) {
+    app.get('/posts/new', ensureLoggedIn, function(req, res) {
         res.render('editor');
     });
     
-    app.post('/blog/editor/save', upload.array(), function(req, res) {
-        console.log('BLOG SAVE BODY', req.body);
-        res.send('ok');
-    });
 
-    app.post('/posts/new', function(req, res) {
+    app.post('/posts/new', ensureLoggedIn, function(req, res) {
         var newForm = BlogPost({
             title: req.body.title,
             author: req.body.author,

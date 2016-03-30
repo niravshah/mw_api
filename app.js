@@ -70,8 +70,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 require('./routes/contacts')(app);
-require('./routes/users')(app, passport);
-require('./routes/posts')(app, passport);
+require('./routes/users')(app);
+require('./routes/posts')(app);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
