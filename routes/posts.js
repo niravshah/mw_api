@@ -1,8 +1,9 @@
 var BlogPost = require('./../models/posts');
 var multer  = require('multer');
 var upload = multer();
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
 
-module.exports = function(app) {
+module.exports = function(app,pass) {
     app.get('/posts', function(req, res) {
         BlogPost.find({}, function(err, users) {
             if(err) throw err;
@@ -19,7 +20,7 @@ module.exports = function(app) {
     
     
     
-    app.get('/editor', function(req, res) {
+    app.get('/editor', ensureLoggedIn, function(req, res) {
         res.render('editor');
     });
     
