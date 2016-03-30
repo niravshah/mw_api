@@ -9,8 +9,18 @@ module.exports = function(app) {
             res.send(users);
         });
     });
-    app.get('/blog-editor', function(req, res) {
-        res.render('blog-editor');
+    
+    app.get('/posts/:slug', function(req, res) {
+        BlogPost.find({slug:req.params.slug}, function(err, post) {
+            if(err) throw err;
+            res.render('post',{data:post[0]})
+        });
+    });
+    
+    
+    
+    app.get('/editor', function(req, res) {
+        res.render('editor');
     });
     
     app.post('/blog/editor/save', upload.array(), function(req, res) {

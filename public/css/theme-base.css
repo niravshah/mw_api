@@ -297,7 +297,7 @@ h6.font-parisienne {
 #header.header-dark-transparent + .fullscreen,
 #header.header-dark-transparent + .halfscreen,
 #header.header-dark-transparent + #google-map {
-    top: -90px;
+    top: -120px;
     margin-bottom: -90px;
 }
 #header-wrap {

@@ -1,0 +1,80 @@
+{% extends 'layout.html' %} {% block cta %}
+<!--HOME -->
+<div id="top-cta">
+    <a class="button color rounded effect icon-left" href="/"><span><i class="fa fa-home"></i>HOME</span></a>
+</div>
+{% endblock %} {% block content %} -->
+<!-- PAGE TITLE -->
+<section id="page-title" class="page-title-parallax page-title-center text-dark" style="background-image:url(/images/parallax/page-title-parallax.jpg);">
+	<div class="container">
+		<div class="page-title col-md-8">
+			<h1>MoveWithin Blog</h1>
+            <span>Latest Talent Management Trends</span>
+        </div>
+        <div class="breadcrumb col-md-4">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i></a>
+                </li>
+                <li><a href="#">Home</a>
+                </li>
+                <li><a href="#">Blog</a>
+                </li>
+                <li class="active"><a href="/posts/{{data.slug}}">{{data.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- END: PAGE TITLE -->
+
+<!-- CONTENT -->
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <!-- Blog post-->
+            <div class="post-content post-content-single col-md-9">
+                <!-- Post item-->
+                <div class="post-item">
+                    <div class="post-image">
+                        <a href="#">
+                            <img alt="" src="{{data.imageUrl}}">
+                        </a>
+                    </div>
+                    <div class="post-content-details">
+                        <div class="post-title">
+                            <h2>{{data.title}}</h2>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-autor">Post by: <a href="#">{{data.author}}</a></span>
+                            <span class="post-category">in <a href="#">{{data.category}}</a></span>
+                        </div>
+                        <div class="post-description">
+                            {{data.postData | safe}}
+                        </div>
+                    </div>
+                    <div class="post-meta">
+                        <div class="post-date">
+                            <span class="post-date-day">{{data.day}}</span>
+                            <span class="post-date-month">{{data.month}}</span>
+                            <span class="post-date-year">{{data.year}}</span>
+                        </div>
+
+                        <div class="post-comments">
+                            <a href="#">
+                                <i class="fa fa-comments-o"></i>
+                                <span class="post-comments-number">324</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- END: Blog post-->
+        </div>
+    </div>
+</section>
+<!-- END: SECTION -->
+{% endblock %} {% block customScript %}
+
+{% endblock %}
+

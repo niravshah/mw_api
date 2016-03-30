@@ -12,6 +12,7 @@ var blogPostSchema = new Schema({
     postData: String,
     created_at: Date,
     updated_at: Date,
+    slug:String,
     day: String,
     month: String,
     year: String
@@ -21,6 +22,8 @@ blogPostSchema.pre('save', function(next) {
     var currentDate = new Date();
     this.updated_at = currentDate;
     if(!this.created_at) this.created_at = currentDate;
+    
+    this.slug = this.title.replace(/\s+/g, '-').toLowerCase();
    
     var month = new Array();
     month[0] = "January";
