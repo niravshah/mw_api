@@ -1,6 +1,6 @@
 var User = require('./../models/user');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
-module.exports = function(app) {
+module.exports = function(app,passport) {
     app.get('/login', function(req, res) {
         res.render('login');
     });
