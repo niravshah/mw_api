@@ -1,0 +1,65 @@
+{% extends 'layout.html' %} {% block cta %}
+<!--HOME -->
+<div id="top-cta">
+    <a class="button color rounded effect icon-left" href="/"><span><i class="fa fa-home"></i>HOME</span></a>
+</div>
+{% endblock %} {% block content %} -->
+<!-- PAGE TITLE -->
+<section id="page-title" class="page-title-parallax page-title-center text-dark" style="background-image:url(images/parallax/page-title-parallax.jpg);">
+    <div class="container">
+        <div class="page-title col-md-8" data-animation="fadeInDown" data-animation-delay="300">
+            <h1>Blog Editor</h1>
+        </div>
+        <div class="breadcrumb col-md-4" data-animation="fadeInDown" data-animation-delay="800">
+            <ul>
+                <li><a href="/"><i class="fa fa-home"></i></a> 
+                </li>
+                <li class="active"><a href="#">Invite</a> 
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- END: PAGE TITLE -->
+<section>
+    <div class="container">
+        <div class="row">
+
+            <form method="post" action="/posts/new">
+                <div class="form-group col-md-8">
+                    <label for="name">Post Title</label>
+                    <input type="text" aria-required="true" name="title" class="form-control required name" placeholder="Enter your Name">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="name">Author Name</label>
+                    <input type="text" aria-required="true" name="author" class="form-control required name" placeholder="Enter your Name">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="name">Post Category</label>
+                    <input type="text" aria-required="true" name="category" class="form-control required name" placeholder="Enter your Name">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="name">Description</label>
+                    <input type="text" aria-required="true" name="description" class="form-control required name" placeholder="Enter your Name">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="message">Post</label>
+                    <textarea id="mytextarea" type="text" name="postData" rows="5" class="form-control required" placeholder="Any additional details questions you may have for us"></textarea>
+                </div>
+                <div class="col-md-8">
+                <button class="btn btn-primary" type="submit" id="form-submit"><i class="fa fa-save"></i>&nbsp;Create Post</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</section>
+{% endblock %} {% block customScript %}
+<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+</script>
+{% endblock %}

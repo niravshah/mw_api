@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var BlogPost = require('./../models/blog');
+var BlogPost = require('./../models/posts');
 
 router.get('/', function(req, res, next) {
     BlogPost.find({}, function(err, users) {
