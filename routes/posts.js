@@ -1,5 +1,6 @@
 var BlogPost = require('./../models/posts');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn();
+var fs = require('fs');
 module.exports = function(app) {
     app.get('/posts', function(req, res) {
         BlogPost.find({}, function(err, users) {
@@ -9,6 +10,19 @@ module.exports = function(app) {
     });
     app.get('/posts/new', ensureLoggedIn, function(req, res) {
         res.render('editor');
+    });
+    app.get('/images', function(req, res) {
+        fs.readdir('public/images/mw_blog', function(err, items) {
+            var imgs = [];
+            var base = '/images/mw_blog/'
+            for(var i = 0; i < items.length; i++) {
+                var val = {};
+                val['title'] = items[i];
+                val['value'] = base + items[i];
+                imgs.push(val);
+            }
+            res.send(imgs);
+        });
     });
     app.get('/posts/:slug', function(req, res) {
         BlogPost.find({
