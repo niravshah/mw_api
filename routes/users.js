@@ -16,7 +16,7 @@ module.exports = function(app,passport) {
             res.send(users);
         });
     });
-    app.post('/users/new', function(req, res) {
+    app.post('/users/new', ensureLoggedIn, function(req, res) {
         var newForm = User({
             username: req.body.username,
             password: req.body.password
