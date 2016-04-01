@@ -6,11 +6,26 @@
     z-index: 1;
     display:none;
 }
-
-#top-cta a{
+#top-cta a {
     padding: 10px;
 }
-
 .header-sticky #top-cta {
     display:block;
+}
+@media only screen and (min-width : 320px) {
+    .text-left-sm {
+        text-align: left !important;
+    }
+    .sm-m-t-20 {
+        margin-top: 20px!important
+    }
+}
+/* Extra Small Devices, Phones */
+ @media only screen and (min-width : 480px) {
+    .text-left-sm {
+        text-align: left !important;
+    }
+    .m-t-20-sm {
+        margin-top: 20px!important
+    }
 }

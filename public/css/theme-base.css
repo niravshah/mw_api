@@ -27,7 +27,7 @@ body {
     LAYOUT BOXED & WIDE
 -----------------------------------------------------------------*/
 
-@media (max-width: 479px) {
+ (max-width: 479px) {
     .container {
         padding: 0 20px;
     }
