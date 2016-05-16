@@ -15,6 +15,7 @@
     "express": "~4.13.1",
     "express-session": "^1.13.0",
     "jade": "~1.11.0",
+    "mongo-express": "^0.30.56",
     "mongoose": "~4.4.10",
     "morgan": "~1.6.1",
     "multer": "^1.1.0",
