@@ -59,10 +59,11 @@
     -ms-border-radius: 50%;
     border-radius: 50%;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: 400;
     text-align: center;
     padding-top: 15px;
-    font-family: serif
+    font-family: 'Open Sans'
 }
 
 #timeline .timeline-item .timeline-icon img {
