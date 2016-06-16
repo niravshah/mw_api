@@ -15,7 +15,7 @@ var INSPIRO = {};
         $wrapper = $('.wrapper'),
         $topbar = $('#topbar'),
         $header = $('#header'),
-
+        $fixedFooter = $('.fixed-footer'),
         //Logo
         logo = $('#logo').find('.logo'),
         logoImg = logo.find('img').attr('src'),
@@ -495,11 +495,25 @@ var INSPIRO = {};
             }
         }
     };
+    
+    INSPIRO.stickyFooter = function () {
+        if($fixedFooter.exists()){
+            var headerOffset = $header.offset().top + 200;
+            if ($window.scrollTop() > headerOffset) {
+                $fixedFooter.show();
+            }else{
+                $fixedFooter.hide();
+            }
+
+        }
+    }
 
     INSPIRO.stickyHeader = function () {
+        $fixedFooter.hide();
         $window.on('scroll', function () {
             INSPIRO.logoStatus();
             INSPIRO.stickyHeaderStatus();
+            INSPIRO.stickyFooter();
 
         });
     };
