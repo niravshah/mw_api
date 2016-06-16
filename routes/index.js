@@ -11,13 +11,19 @@ router.get('/', function(req, res, next) {
     });
 });
 
+
+
+/*router.get('/pricing', function(req, res, next) {
+    res.render('pricing');
+});*/
+
 router.get('/invite', function(req, res, next) {
     res.render('invite');
 });
 
-router.get('/pricing', function(req, res, next) {
-    res.render('pricing');
-});
+router.get('/excellence',function(req,res){
+    res.render('excellence');
+})
 
 
 module.exports = router;
